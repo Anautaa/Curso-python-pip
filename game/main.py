@@ -23,29 +23,29 @@ def check_rules(user_option, computer_option, user_wins, computer_wins):
   elif user_option == 'piedra':
     if computer_option == 'tijera':
       print('piedra gana a tijera')
-      print('user gano!')
+      print('-> USUARIO ¡GANA!')
       user_wins += 1
     else:
       print('Papel gana a piedra')
-      print('computer gano!')
+      print('-> OPONENTE ¡GANA!')
       computer_wins += 1
   elif user_option == 'papel':
     if computer_option == 'piedra':
       print('papel gana a piedra')
-      print('user gano')
+      print('-> USUARIO ¡GANA!')
       user_wins += 1
     else:
       print('tijera gana a papel')
-      print('computer gano!')
+      print('-> OPONENTE ¡GANA!')
       computer_wins += 1
   elif user_option == 'tijera':
     if computer_option == 'papel':
       print('tijera gana a papel')
-      print('user gano!')
+      print('-> USUARIO ¡GANA!')
       user_wins += 1
     else:
       print('piedra gana a tijera')
-      print('computer gano!')
+      print('-> OPONENTE ¡GANA!')
       computer_wins += 1
   return user_wins, computer_wins
 
@@ -54,6 +54,7 @@ def run_game():
   user_wins = 0  
   rounds = 1
   while True:
+    print('\n')
     print('*' * 10)
     print('ROUND', rounds)
     print('*' * 10)
@@ -66,11 +67,15 @@ def run_game():
     user_wins, computer_wins = check_rules(user_option, computer_option, user_wins, computer_wins)
 
     if computer_wins == 2:
-      print('El ganador es la computadora')
+        print('=========================')
+        print('El CAMPEON es el OPONENTE')
+        print('-------------------------\n')
       break
 
     if user_wins == 2:
-      print('El ganador es el usuario')
+        print('=========================')
+        print('El CAMPEON es el USUARIO')
+        print('-------------------------\n')
       break
 
 run_game()
